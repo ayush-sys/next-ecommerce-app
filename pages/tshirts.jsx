@@ -65,22 +65,30 @@ const tshirtsInfo = [
 function tshirts() {
   return (
   <section className="text-gray-600 body-font">
-    <div className="container px-5 py-24 mx-auto">
-      <div className="flex flex-wrap -m-4">
-
+    <div className="container px-3 md:px-2 py-24 mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {tshirtsInfo.map(item => (
-          <Link href={`/product/` + item.name}>
-            <div className="lg:w-1/4 md:w-1/2 p-4 w-full cursor-pointer" id={item.id}>
-              <a className="block relative h-80 rounded overflow-hidden">
-                <img alt="ecommerce" className="m-auto md:m-0 object-cover object-top w-full h-full block" src={item.link} />
-              </a>
-              <div className="mt-4">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">{item.category}</h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium">{item.name}</h2>
-                <p className="mt-1">₹ {item.price}</p>
-              </div>
+
+          <div className='p-4 w-full cursor-pointer hover:shadow-lg border-2 border-gray-100'>  
+            <a className="block relative h-80 rounded overflow-hidden">
+              <img alt="ecommerce" className="m-auto md:m-0 object-cover object-top w-full h-full block" src={item.link} />
+            </a>
+            <div className="mt-4">
+               <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">{item.category}</h3>
+                 <h2 className="text-gray-900 title-font text-lg font-medium">{item.name}</h2>
+                 <p className="mt-1">₹ {item.price}</p>
             </div>
-          </Link>
+
+            <div className='my-4'>
+               <Link href={`/product/` + item.name}>
+                 <a>
+                  <button className='bg-gray-200 hover:bg-indigo-400 text-gray-600 hover:text-white inline-flex items-center justify-center px-3 py-1 rounded-lg'>
+                    Buy Now
+                 </button>
+                </a>
+               </Link>
+             </div>
+          </div>
         ))}
 
       </div>

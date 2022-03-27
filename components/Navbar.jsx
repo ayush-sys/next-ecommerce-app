@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import React from 'react';
 import { SiSpotlight } from 'react-icons/si';
-import { AiOutlineShopping } from 'react-icons/ai';
+import { FiShoppingBag } from 'react-icons/fi';
+
 
 const navItems = [
     {
@@ -21,6 +22,7 @@ const navItems = [
         link: 'stickers'
     },
 ]
+
 
 function Navbar() {
   return (
@@ -48,9 +50,13 @@ function Navbar() {
 
             {/* shopping cart */}
             <div className='absolute right-0 mx-5'>
-                <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded mt-2 md:mt-0">
-                    <AiOutlineShopping className='text-xl md:text-2xl text-gray-600'/>
+                <Link href='/checkout'>
+                <a>
+                <button className="inline-flex items-center bg-gray-100 border-0 py-2 px-3 focus:outline-none hover:bg-gray-200 rounded mt-2 md:mt-0">
+                    <FiShoppingBag className='text-base md:text-2xl text-gray-600'/>
                 </button>
+                </a>
+                </Link>
             </div>
         </div>
     </header>
